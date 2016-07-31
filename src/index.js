@@ -37,7 +37,7 @@ const formatPackage = (pkg, packages) => {
   return packages;
 };
 
-export function run(entry, option) {
+export default function run(entry, option) {
   return new Promise((resolve, reject) => {
     readInstalled(entry, option, (err, data) => {
       if (err) {
