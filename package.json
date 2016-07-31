@@ -1,0 +1,21 @@
+{
+  "name": "license-list",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Takahiro Abe",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^7.0.5",
+    "read-installed": "^4.0.3"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
