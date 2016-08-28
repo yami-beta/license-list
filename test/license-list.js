@@ -26,4 +26,16 @@ describe('license-list', function () {
       assert.equal(info.license, 'MIT');
     });
   });
+
+  it('should return maintainers (undefined)', () => {
+    return pkgInfo.then((info) => {
+      assert.equal(info.maintainers, undefined);
+    });
+  });
+
+  it('should return contributors (undefined)', () => {
+    return pkgInfo.then((info) => {
+      assert.equal(info.contributors, undefined);
+    });
+  });
 });
