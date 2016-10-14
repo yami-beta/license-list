@@ -1,8 +1,15 @@
 {
   "name": "license-list",
   "version": "0.0.1",
-  "description": "",
+  "description": "The helper library for Making a list of package's LICENSE information",
   "main": "./lib/index.js",
+  "files": [
+      "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yami-beta/license-list.git"
+  },
   "scripts": {
     "build": "NODE_ENV=production babel src -d lib",
     "test": "mocha --compilers js:babel-register"
