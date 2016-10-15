@@ -6,7 +6,7 @@ describe('license-list', function () {
   let pkgInfo;
   before(async () => {
     const packages = await licenseList('.', { dev: false });
-    pkgInfo = packages['license-list@0.0.1'];
+    pkgInfo = packages['license-list@0.0.2'];
   });
 
   it("should return package's name", () => {
@@ -14,7 +14,7 @@ describe('license-list', function () {
   });
 
   it("should return package's version", () => {
-    assert.equal(pkgInfo.version, '0.0.1');
+    assert.equal(pkgInfo.version, '0.0.2');
   });
 
   it("should return package's license", () => {
