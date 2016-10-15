@@ -3,9 +3,14 @@ import fs from 'fs';
 import glob from 'glob';
 import path from 'path';
 
-const formatPackage = (pkg, packages) => {
+const formatPackage = (pkg, packages, option) => {
   if (!pkg.name) { return packages; }
   if (packages[`${pkg.name}@${pkg.version}`]) { return packages; }
+
+  // Exclude devDependencies
+  // read-installed `options.dev` is not working correctly but extraneous is set on devDependencies
+  // https://github.com/npm/read-installed/blob/master/test/dev.js#L20
+  if (!option.dev && pkg.extraneous) { return packages; }
 
   const packageList = packages;
 
@@ -31,7 +36,7 @@ const formatPackage = (pkg, packages) => {
   if (!pkg.dependencies) { return packages; }
 
   Object.keys(pkg.dependencies).forEach((packageName) => {
-    formatPackage(pkg.dependencies[packageName], packages);
+    formatPackage(pkg.dependencies[packageName], packages, option);
   });
 
   return packages;
@@ -44,7 +49,7 @@ export default function run(entry, option) {
         reject(new Error(err));
         return;
       }
-      const packages = formatPackage(data, {});
+      const packages = formatPackage(data, {}, option);
       resolve(packages);
     });
   });
