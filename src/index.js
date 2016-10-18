@@ -43,13 +43,15 @@ const formatPackage = (pkg, packages, option) => {
 };
 
 export default function run(entry, option) {
+  const defaultOption = { dev: false };
+  const mergedOption = Object.assign({}, defaultOption, option);
   return new Promise((resolve, reject) => {
     readInstalled(entry, option, (err, data) => {
       if (err) {
         reject(new Error(err));
         return;
       }
-      const packages = formatPackage(data, {}, option);
+      const packages = formatPackage(data, {}, mergedOption);
       resolve(packages);
     });
   });
