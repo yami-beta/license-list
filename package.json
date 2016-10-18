@@ -1,6 +1,6 @@
 {
   "name": "license-list",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The helper library for making a list of package's LICENSE information",
   "main": "./lib/index.js",
   "files": [
