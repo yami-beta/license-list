@@ -3,16 +3,23 @@
   "version": "0.0.5",
   "description": "The helper library for making a list of package's LICENSE information",
   "main": "./lib/index.js",
+  "bin": {
+    "license-list": "./bin/cmd.js"
+  },
   "files": [
-      "lib"
+    "lib"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/yami-beta/license-list.git"
   },
   "scripts": {
-    "build": "NODE_ENV=production babel src -d lib",
-    "watch": "NODE_ENV=production babel -w src -d lib",
+    "build": "npm-run-all -p build:*",
+    "build:bin": "NODE_ENV=production babel src/bin -d bin",
+    "build:lib": "NODE_ENV=production babel src/lib -d lib",
+    "watch": "npm-run-all -p watch:*",
+    "watch:bin": "NODE_ENV=production babel -w src/bin -d bin",
+    "watch:lib": "NODE_ENV=production babel -w src/lib -d lib",
     "test": "mocha --compilers js:babel-register"
   },
   "author": "Takahiro Abe",
@@ -32,7 +39,9 @@
     "eslint": "^3.2.0",
     "eslint-config-airbnb-base": "^5.0.1",
     "eslint-plugin-import": "^1.12.0",
+    "minimist": "^1.2.0",
     "mocha": "^3.0.2",
+    "npm-run-all": "^3.1.1",
     "power-assert": "^1.4.1"
   }
 }

@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 import assert from 'assert';
-import licenseList from '../src/index';
+import licenseList from '../src/lib/index';
 import packageJson from '../package.json';
 
 describe('license-list', function () {
