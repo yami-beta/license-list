@@ -28,4 +28,11 @@ describe('license-list', function () {
   it("should return package's contributors", () => {
     assert.equal(pkgInfo.contributors, undefined);
   });
+
+  it("should return package's license file", () => {
+    const licenseFile = pkgInfo.licenseFile;
+    assert.equal(typeof licenseFile, 'string');
+    const firstLine = licenseFile.split(/\n/)[0];
+    assert.equal(firstLine, 'MIT License');
+  });
 });

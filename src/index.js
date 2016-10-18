@@ -27,7 +27,7 @@ const formatPackage = (pkg, packages, option) => {
   if (pkgInfo.path) {
     const licenseFiles = glob.sync(path.join(pkgInfo.path, 'LICENSE*'));
     if (licenseFiles.length > 0) {
-      pkgInfo.licenseFile = fs.readFileSync(licenseFiles[0]);
+      pkgInfo.licenseFile = fs.readFileSync(licenseFiles[0], 'utf8');
     }
   }
 
