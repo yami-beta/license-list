@@ -27,7 +27,7 @@ $ npm install --save-dev license-list
 import licenseList from 'license-list';
 
 licenseList('.', { dev: false }).then((packages) => {
-  const pkgInfo = packages['licenseList@0.0.5'];
+  const pkgInfo = packages['license-list@0.1.0'];
   console.log(pkgInfo);
 });
 ```
@@ -42,7 +42,7 @@ license-list@0.1.0 (MIT)
 
   MIT License
 
-  Copyright (c) 2016 Takahiro Abe
+  Copyright (c) 2016 yami_beta
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
