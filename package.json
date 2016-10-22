@@ -25,6 +25,9 @@
   },
   "author": "Takahiro Abe",
   "license": "MIT",
+  "keywords": [
+    "license"
+  ],
   "dependencies": {
     "babel-polyfill": "^6.16.0",
     "glob": "^7.0.5",
