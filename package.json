@@ -1,6 +1,6 @@
 {
   "name": "license-list",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "The helper library for making a list of package's LICENSE information",
   "main": "./lib/index.js",
   "bin": {
@@ -20,7 +20,7 @@
     "watch": "npm-run-all -p watch:*",
     "watch:bin": "NODE_ENV=production babel -w src/bin -d bin",
     "watch:lib": "NODE_ENV=production babel -w src/lib -d lib",
-    "test": "mocha --compilers js:babel-register"
+    "test": "npm run build && mocha --compilers js:babel-register --timeout 5000"
   },
   "author": "Takahiro Abe",
   "license": "MIT",
