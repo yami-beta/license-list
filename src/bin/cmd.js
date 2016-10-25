@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import 'babel-polyfill';
 import minimist from 'minimist';
 import licenseList from '../lib/index';
 
@@ -29,9 +28,8 @@ const argv = minimist(process.argv.slice(2), {
 });
 const baseDir = argv['_'][0] || '.';
 const option = { dev: argv['dev'] };
-(async () => {
-  const packages = await licenseList(baseDir, option);
+licenseList(baseDir, option).then((packages) => {
   Object.keys(packages).forEach((pkgId) => {
     console.log(formatOutput(packages[pkgId]));
   });
-})();
+});
