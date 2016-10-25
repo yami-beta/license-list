@@ -21,7 +21,8 @@
     "watch": "npm-run-all -p watch:*",
     "watch:bin": "NODE_ENV=production babel -w src/bin -d bin",
     "watch:lib": "NODE_ENV=production babel -w src/lib -d lib",
-    "test": "npm run build && mocha --compilers js:babel-register --timeout 5000"
+    "test": "npm run build && mocha --compilers js:babel-register --timeout 5000",
+    "eslint": "eslint src"
   },
   "author": "Takahiro Abe",
   "license": "MIT",
