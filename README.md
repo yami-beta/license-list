@@ -17,6 +17,7 @@ $ npm install --save-dev license-list
 
 - `basePath`: String
     - Specifying `node_modules` path
+    - In case of `node_modules` in current directory, use `licenseList('.')`
 - `opts`: Object
     - `opts.dev`: Boolean
         - When `opts.dev` is true, *devDependencies* are included
