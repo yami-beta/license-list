@@ -16,8 +16,8 @@ $ npm install --save-dev license-list
 ### `licenseList(basePath [, opts])`
 
 - `basePath`: String
-    - Specifying `node_modules` path
-    - In case of `node_modules` in current directory, use `licenseList('.')`
+    - Specifying path of `package.json`
+    - In case of `package.json` in current directory, use `licenseList('.')`
 - `opts`: Object
     - `opts.dev`: Boolean
         - When `opts.dev` is true, *devDependencies* are included
